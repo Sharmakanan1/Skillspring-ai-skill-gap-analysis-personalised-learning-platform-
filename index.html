@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f8fc">
+  <title>SkillSpring — Your learning dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="SkillSpring home">
+        <span class="brand-mark" aria-hidden="true">s</span>
+        <span>skillspring<span class="brand-period">.</span></span>
+      </a>
+
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#overview">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="4" rx="1.5"/><rect x="13.5" y="10.5" width="7" height="10" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/></svg>
+          <span>Overview</span>
+        </a>
+        <a class="nav-link" href="#skills">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/></svg>
+          <span>Skill analysis</span>
+          <span class="nav-count">4</span>
+        </a>
+        <a class="nav-link" href="#learning">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M4 5.5v16M8 7h8m-8 4h8"/></svg>
+          <span>Learning path</span>
+        </a>
+        <a class="nav-link" href="#achievements">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21h8m-4-4v4m-5-18h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v2a4 4 0 0 0 4 4m9-6h3v2a4 4 0 0 1-4 4"/></svg>
+          <span>Achievements</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="coach-card">
+          <div class="coach-spark" aria-hidden="true">✳</div>
+          <p class="coach-title">Your AI coach</p>
+          <p class="coach-copy">A little progress each day adds up.</p>
+          <div class="coach-streak"><span aria-hidden="true">✦</span> 7 day streak <span class="streak-dots">● ● ● ● ● ● ●</span></div>
+        </div>
+        <button class="profile-button" type="button" aria-label="User profile">
+          <span class="avatar">JD</span>
+          <span class="profile-text"><strong>Jordan Davis</strong><small>Product designer</small></span>
+          <span class="profile-more" aria-hidden="true">···</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="main-content" id="overview">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuButton" type="button" aria-label="Open navigation" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+        <div class="breadcrumb">My workspace <span>/</span> <strong>Overview</strong></div>
+        <div class="topbar-actions">
+          <div class="today-label"><span class="status-dot"></span> Thursday, October 22</div>
+          <button class="auth-open-button" id="accountButton" type="button">Login / Register</button>
+          <button class="icon-button notification-button" type="button" aria-label="Notifications">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/><path d="M10 21h4"/></svg>
+            <span class="notification-dot"></span>
+          </button>
+        </div>
+      </header>
+
+      <div class="dashboard">
+        <section class="welcome-row" aria-labelledby="welcomeTitle">
+          <div>
+            <p class="eyebrow">YOUR PERSONAL LEARNING SPACE</p>
+            <h1 id="welcomeTitle">Good morning, Jordan <span class="wave" aria-hidden="true">✳</span></h1>
+            <p class="welcome-subtitle">You’re building the skills to become a <strong>Senior Product Designer.</strong></p>
+          </div>
+          <button class="button button-primary" id="assessmentButton" type="button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3m0 12v3M3 12h3m12 0h3M5.64 5.64l2.12 2.12m8.48 8.48 2.12 2.12m0-12.72-2.12 2.12m-8.48 8.48-2.12 2.12"/><circle cx="12" cy="12" r="4"/></svg>
+            Retake assessment
+          </button>
+        </section>
+
+        <section class="stats-grid" aria-label="Learning progress">
+          <article class="stat-card">
+            <div class="stat-top"><span class="stat-label">Overall readiness</span><span class="stat-icon icon-lilac">↗</span></div>
+            <div class="stat-value" id="readinessValue">68<span>%</span></div>
+            <div class="stat-foot"><span class="positive">↑ 12%</span> <span>vs. last month</span><div class="mini-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span class="stat-label">Skills in progress</span><span class="stat-icon icon-peach">✳</span></div>
+            <div class="stat-value">4<span class="stat-word"> skills</span></div>
+            <div class="stat-foot"><span class="stat-muted">2 almost there</span><div class="mini-bars bars-peach" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span class="stat-label">Learning streak</span><span class="stat-icon icon-mint">✦</span></div>
+            <div class="stat-value">7<span class="stat-word"> days</span></div>
+            <div class="stat-foot"><span class="stat-muted">Your best is 14 days</span><div class="mini-bars bars-mint" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          </article>
+          <article class="stat-card">
+            <div class="stat-top"><span class="stat-label">Time invested</span><span class="stat-icon icon-blue">◷</span></div>
+            <div class="stat-value">12<span class="stat-word">h</span> 40<span class="stat-word">m</span></div>
+            <div class="stat-foot"><span class="positive">↑ 2h 15m</span> <span>this week</span><div class="mini-bars bars-blue" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <article class="panel skill-panel" id="skills">
+            <div class="panel-heading">
+              <div>
+                <p class="eyebrow">KNOW YOUR NEXT MOVE</p>
+                <h2>Your skill landscape</h2>
+              </div>
+              <button class="text-button" type="button" id="viewSkillsButton">View all skills <span aria-hidden="true">→</span></button>
+            </div>
+            <p class="panel-description">Here’s how your skills compare to your target role.</p>
+            <div class="chart-legend"><span><i class="legend-dot dot-you"></i>Your level</span><span><i class="legend-dot dot-goal"></i>Role requirement</span></div>
+            <div class="chart-wrap">
+              <div class="chart-y-labels" aria-hidden="true"><span>Expert</span><span>Advanced</span><span>Intermediate</span><span>Beginner</span></div>
+              <div class="chart" role="img" aria-label="Skill levels: User research 78%, UI design 88%, Prototyping 72%, Design systems 52%, Data analytics 40%, Product strategy 56%">
+                <div class="chart-gridline line-1"></div><div class="chart-gridline line-2"></div><div class="chart-gridline line-3"></div><div class="chart-gridline line-4"></div>
+                <svg class="chart-svg" viewBox="0 0 600 200" preserveAspectRatio="none" aria-hidden="true">
+                  <defs><linearGradient id="areaGradient" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#8977ed" stop-opacity=".20"/><stop offset="100%" stop-color="#8977ed" stop-opacity="0"/></linearGradient></defs>
+                  <path class="goal-area" d="M0 40 L120 30 L240 48 L360 58 L480 75 L600 48 L600 200 L0 200 Z"/>
+                  <path class="you-area" d="M0 76 L120 56 L240 88 L360 120 L480 142 L600 112 L600 200 L0 200 Z"/>
+                  <path class="goal-line" d="M0 40 L120 30 L240 48 L360 58 L480 75 L600 48"/>
+                  <path class="you-line" d="M0 76 L120 56 L240 88 L360 120 L480 142 L600 112"/>
+                  <g class="you-points"><circle cx="0" cy="76" r="4"/><circle cx="120" cy="56" r="4"/><circle cx="240" cy="88" r="4"/><circle cx="360" cy="120" r="4"/><circle cx="480" cy="142" r="4"/><circle cx="600" cy="112" r="4"/></g>
+                  <g class="goal-points"><circle cx="0" cy="40" r="4"/><circle cx="120" cy="30" r="4"/><circle cx="240" cy="48" r="4"/><circle cx="360" cy="58" r="4"/><circle cx="480" cy="75" r="4"/><circle cx="600" cy="48" r="4"/></g>
+                </svg>
+                <div class="chart-x-labels"><span>User research</span><span>UI design</span><span>Prototyping</span><span>Design systems</span><span>Data analytics</span><span>Product strategy</span></div>
+              </div>
+            </div>
+            <div class="insight-banner"><span class="insight-icon" aria-hidden="true">✦</span><p><strong>Your biggest opportunity:</strong> Strengthening your data analytics skills could improve your role readiness by <strong>18%.</strong></p><button class="insight-link" type="button" data-scroll="#learning">Explore path <span aria-hidden="true">→</span></button></div>
+          </article>
+
+          <article class="panel learning-panel" id="learning">
+            <div class="panel-heading learning-heading">
+              <div><p class="eyebrow">MADE FOR YOUR GOALS</p><h2>Your learning path</h2></div>
+              <button class="more-button" type="button" aria-label="More learning path options">···</button>
+            </div>
+            <div class="path-progress"><span>YOUR WEEKLY GOAL</span><strong>3 of 5 hours</strong><div class="progress-track"><i></i></div></div>
+            <div class="course-list">
+              <article class="course-item">
+                <div class="course-thumb thumb-purple"><span aria-hidden="true">◉</span></div>
+                <div class="course-info"><div class="course-meta"><span>COURSE · 2H 30M</span><span class="course-tag">HIGH IMPACT</span></div><h3>Data-driven design decisions</h3><div class="course-progress"><div class="progress-track"><i style="width:65%"></i></div><span>65%</span></div></div>
+                <button class="course-action" type="button" aria-label="Continue Data-driven design decisions">→</button>
+              </article>
+              <article class="course-item">
+                <div class="course-thumb thumb-green"><span aria-hidden="true">⌁</span></div>
+                <div class="course-info"><div class="course-meta"><span>PROJECT · 1H 15M</span><span class="course-tag tag-soft">HANDS-ON</span></div><h3>Build your first design system</h3><div class="course-progress"><div class="progress-track"><i style="width:30%"></i></div><span>30%</span></div></div>
+                <button class="course-action" type="button" aria-label="Continue Build your first design system">→</button>
+              </article>
+              <article class="course-item">
+                <div class="course-thumb thumb-yellow"><span aria-hidden="true">✳</span></div>
+                <div class="course-info"><div class="course-meta"><span>LESSON · 35 MIN</span><span class="course-tag tag-soft">UP NEXT</span></div><h3>Presenting product strategy</h3><div class="course-progress"><div class="progress-track"><i style="width:0%"></i></div><span>0%</span></div></div>
+                <button class="course-action" type="button" aria-label="Start Presenting product strategy">→</button>
+              </article>
+            </div>
+            <button class="button button-outline full-button" type="button" data-scroll="#learning">Explore your full learning path <span aria-hidden="true">→</span></button>
+          </article>
+        </section>
+
+        <section class="bottom-grid">
+          <article class="panel focus-panel">
+            <div class="focus-illustration" aria-hidden="true"><div class="focus-orbit orbit-one"></div><div class="focus-orbit orbit-two"></div><span>✦</span></div>
+            <div class="focus-copy"><p class="eyebrow">A TIP FROM YOUR AI COACH</p><h2>Small steps, big shifts.</h2><p>Try spending just 20 minutes today on data analytics. You’re closer to your goal than you think.</p></div>
+            <button class="button button-dark" type="button" data-scroll="#learning">Start a quick lesson <span aria-hidden="true">→</span></button>
+          </article>
+          <article class="panel achievements-panel" id="achievements">
+            <div class="panel-heading"><div><p class="eyebrow">LOOK HOW FAR YOU’VE COME</p><h2>Recent wins</h2></div><a class="text-button" href="#achievements">All achievements <span aria-hidden="true">→</span></a></div>
+            <div class="achievement-list">
+              <div class="achievement"><span class="achievement-icon badge-blue" aria-hidden="true">✧</span><span><strong>Research pro</strong><small>Completed 5 user interviews</small></span><span class="achievement-date">OCT 19</span></div>
+              <div class="achievement"><span class="achievement-icon badge-orange" aria-hidden="true">✦</span><span><strong>Week warrior</strong><small>Kept a 7-day learning streak</small></span><span class="achievement-date">OCT 18</span></div>
+            </div>
+          </article>
+        </section>
+        <footer class="dashboard-footer"><span>Made for your next chapter.</span><span>Progress is personal. Keep going <span aria-hidden="true">✳</span></span></footer>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-backdrop" id="assessmentModal" hidden>
+    <section class="assessment-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="closeModal" type="button" aria-label="Close assessment">×</button>
+      <p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
+      <h2 id="modalTitle">Update your skill check-in</h2>
+      <p class="modal-copy">Choose a skill to focus on and we’ll refresh your personalized recommendations.</p>
+      <form id="assessmentForm">
+        <label class="form-label" for="focusSkill">What would you like to focus on?</label>
+        <select id="focusSkill" name="focusSkill">
+          <option value="Data analytics">Data analytics</option>
+          <option value="Design systems">Design systems</option>
+          <option value="Product strategy">Product strategy</option>
+          <option value="User research">User research</option>
+          <option value="Prototyping">Prototyping</option>
+          <option value="UI design">UI design</option>
+        </select>
+        <label class="form-label" for="confidence">How confident do you feel right now?</label>
+        <div class="range-labels"><span>Just starting</span><output id="confidenceOutput" for="confidence">3 / 5</output><span>Feeling great</span></div>
+        <input id="confidence" name="confidence" type="range" min="1" max="5" value="3">
+        <button class="button button-primary modal-submit" type="submit">Update my learning plan <span aria-hidden="true">→</span></button>
+      </form>
+    </section>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

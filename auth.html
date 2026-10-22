@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f8fb">
+  <title>Sign in or register — SkillSpring</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="auth.js" defer></script>
+</head>
+
+<body class="auth-page">
+  <main class="auth-layout">
+    <section class="auth-story" aria-label="About SkillSpring">
+      <a class="brand auth-brand" href="auth.html" aria-label="SkillSpring home">
+        <span class="brand-mark" aria-hidden="true">s</span>
+        <span>skillspring<span class="brand-period">.</span></span>
+      </a>
+      <div class="story-content">
+        <span class="story-label"><span class="story-dot"></span> YOUR GROWTH, YOUR WAY</span>
+        <h1>Make room for<br>your next <span>big thing.</span></h1>
+        <p>See where your skills shine, discover new opportunities, and follow a learning plan designed around your
+          goals.</p>
+        <div class="story-points">
+          <div><span class="story-check">✓</span><span>Understand your skill gaps</span></div>
+          <div><span class="story-check">✓</span><span>Get a learning path tailored to you</span></div>
+          <div><span class="story-check">✓</span><span>Celebrate every bit of progress</span></div>
+        </div>
+      </div>
+      <div class="story-footer">A little progress each day adds up. <span aria-hidden="true">✳</span></div>
+      <div class="story-decoration decoration-one" aria-hidden="true">✳</div>
+      <div class="story-decoration decoration-two" aria-hidden="true">✦</div>
+    </section>
+    <section class="auth-main" aria-label="Account access">
+      <a class="brand auth-mobile-brand" href="auth.html" aria-label="SkillSpring home">
+        <span class="brand-mark" aria-hidden="true">s</span>
+        <span>skillspring<span class="brand-period">.</span></span>
+      </a>
+      <div class="auth-card">
+        <div class="auth-tabs" role="tablist" aria-label="Account options">
+          <button class="auth-tab active" id="loginTab" type="button" role="tab" aria-selected="true"
+            aria-controls="loginPanel">Log in</button>
+          <button class="auth-tab" id="registerTab" type="button" role="tab" aria-selected="false"
+            aria-controls="registerPanel">Register</button>
+        </div>
+        <section class="auth-panel" id="loginPanel" role="tabpanel" aria-labelledby="loginTab">
+          <p class="eyebrow">WELCOME BACK</p>
+          <h2>Pick up where you left off.</h2>
+          <p class="auth-subtitle">Log in to continue your learning journey.</p>
+          <form id="loginForm">
+            <label class="auth-label" for="loginEmail">Email address</label>
+            <input class="auth-input" id="loginEmail" name="email" type="email" autocomplete="email"
+              placeholder="you@example.com" required>
+            <label class="auth-label" for="loginPassword">Password</label>
+            <input class="auth-input" id="loginPassword" name="password" type="password" autocomplete="current-password"
+              placeholder="Enter your password" required>
+            <button class="auth-submit" type="submit">Log in <span aria-hidden="true">→</span></button>
+          </form>
+          <p class="auth-switch">New to SkillSpring? <button type="button" data-show="register">Register</button></p>
+        </section>
+        <section class="auth-panel" id="registerPanel" role="tabpanel" aria-labelledby="registerTab" hidden>
+          <p class="eyebrow">START YOUR NEXT CHAPTER</p>
+          <h2>Create your account.</h2>
+          <p class="auth-subtitle">Save your skills and build a learning plan that’s yours.</p>
+          <form id="registerForm">
+            <label class="auth-label" for="registerName">Your name</label>
+            <input class="auth-input" id="registerName" name="name" type="text" autocomplete="name"
+              placeholder="Jordan Davis" maxlength="60" required>
+            <label class="auth-label" for="registerEmail">Email address</label>
+            <input class="auth-input" id="registerEmail" name="email" type="email" autocomplete="email"
+              placeholder="you@example.com" required>
+            <label class="auth-label" for="registerPassword">Password</label>
+            <input class="auth-input" id="registerPassword" name="password" type="password" autocomplete="new-password"
+              minlength="8" placeholder="At least 8 characters" required>
+            <p class="password-hint">Use at least 8 characters.</p>
+            <button class="auth-submit" type="submit">Create account <span aria-hidden="true">→</span></button>
+          </form>
+          <p class="auth-switch">Already registered? <button type="button" data-show="login">Log in</button></p>
+        </section>
+        <p class="auth-message" id="authMessage" role="status" aria-live="polite"></p>
+        <p class="auth-note">Demo accounts are stored in this browser only. This prototype is not production
+          authentication.</p>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
